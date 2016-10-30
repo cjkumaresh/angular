@@ -1,0 +1,24 @@
+{
+  "name": "angular",
+  "version": "1.0.0",
+  "description": "Angularjs with Material Design",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logeshwaranperiyasamy/angular.git"
+  },
+  "author": "Logeshwaran Periyasamy <logu.vkl@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/logeshwaranperiyasamy/angular/issues"
+  },
+  "homepage": "https://github.com/logeshwaranperiyasamy/angular#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "lodash": "^4.16.4"
+  }
+}

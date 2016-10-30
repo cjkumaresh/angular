@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="angular">
+
+<head>
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="./css/materialize.min.css" media="screen,projection" />
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!--Import custom styles-->
+	<link type="text/css" rel="stylesheet" href="./css/style.css" media="screen,projection" />
+</head>
+
+<body ng-controller="mainCtrl">
+	<header ng-include src="page.header"></header>
+	<main>
+		<div class="container" ng-view></div>
+	</main>
+	<footer ng-include src="page.footer" class="page-footer"></footer>
+
+	<!--Import library files-->
+	<script type="text/javascript" src="./js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/lib/angular.min.js"></script>
+	<script type="text/javascript" src="./js/lib/angular-route.min.js"></script>
+	<script type="text/javascript" src="./js/lib/angular-animate.min.js"></script>
+	<script type="text/javascript" src="./js/lib/materialize.min.js"></script>
+	<script type="text/javascript" src="./js/lib/angular-materialize.min.js"></script>
+
+	<!--Import custom files -->
+	<script src="./js/app/app.js"></script>
+	<script src="./js/app/appConfig.js"></script>
+
+	<script src="./js/app/service/utilService.js"></script>
+	<script src="./js/app/service/dataService.js"></script>
+
+	<script src="./js/app/controller/mainCtrl.js"></script>
+	<script src="./js/app/controller/listCtrl.js"></script>
+</body>
+
+</html>
