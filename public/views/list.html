@@ -2,23 +2,23 @@
 	<div class="card">
 		<div class="card-content">
 			<div class="card-title">
-				<span>Employee Details</span>
+				<span>List of Employees</span>
 				<a class="btn-floating waves-effect waves-light right" ng-click="add()"><i class="small material-icons">add</i></a>
 			</div>
 			<table class="employee-table striped highlight responsive-table">
 				<thead>
 					<tr>
-						<th class="center-align" data-field="sno">##</th>
-						<th data-field="name">Name</th>
-						<th class="center-align" data-field="id">ID</th>
-						<th data-field="email">Email</th>
-						<th class="center-align" data-field="action">Action</th>
+						<th class="center-align">##</th>
+						<th>Name</th>
+						<th class="center-align">ID</th>
+						<th class="center-align">Gender</th>
+						<th>Email</th>
+						<th class="center-align">Action</th>
 					</tr>
 				</thead>
-
 				<tbody>
 					<tr ng-if="!employees.length">
-						<td colspan="5">
+						<td colspan="6">
 							<div class="valign-wrapper">
 								<div class="valign center">Data not available to show!</div>
 							</div>
@@ -26,12 +26,13 @@
 					</tr>
 					<tr ng-repeat="item in employees">
 						<td class="center-align">{{$index+1}}</td>
-						<td>{{item.name}}</td>
+						<td>{{item.firstname}} {{item.lastname}}</td>
 						<td class="center-align">{{item.id}}</td>
+						<td class="center-align">{{item.gender}}</td>
 						<td>{{item.email}}</td>
 						<td class="center-align">
-							<a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Edit" ng-click="edit(item.id)"><i class="material-icons">mode_edit</i></a>
-							<a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Delete" ng-click="remove(item.id)"><i class="material-icons">delete</i></a>
+							<a ng-click="edit(item.id)"><i class="material-icons">mode_edit</i></a>
+							<a ng-click="remove(item.id)"><i class="material-icons">delete</i></a>
 						</td>
 					</tr>
 				</tbody>

@@ -1,1 +1,1 @@
-var app = angular.module('angular',['ngRoute', 'ui.materialize']);
+var app = angular.module('angular', ['ngRoute', 'ui.materialize']);

@@ -1,21 +1,24 @@
 app.controller('listCtrl', ['$scope', 'utilService', 'dataService', function ($scope, utilService, dataService) {
     $scope.init = function () {
-        $scope.fetch();
+        $scope.fetchAll();
     };
-    $scope.fetch = function () {
+    $scope.fetchAll = function () {
         $scope.employees = [];
         var params = {
             success: function (response) {
                 $scope.employees = response;
+            },
+            error: function (response) {
+                Materialize.toast('Request Failed!', 2000);
             }
         };
-        dataService.getEmployees(params);
+        dataService.fetchAll(params);
     };
     $scope.add = function () {
-        Materialize.toast('Add Functionality is in progress!', 2000);
+        utilService.redirect('/employee');
     };
     $scope.edit = function (id) {
-        Materialize.toast('Edit Functionality is in progress!', 2000);
+        utilService.redirect('/employee/' + id);
     };
     $scope.remove = function (id) {
         var params = {
@@ -23,9 +26,12 @@ app.controller('listCtrl', ['$scope', 'utilService', 'dataService', function ($s
             success: function (response) {
                 $scope.employees = response;
                 Materialize.toast('Deleted successfully!', 2000);
+            },
+            error: function (response) {
+                Materialize.toast('Request Failed!', 2000);
             }
         };
-        dataService.removeEmployee(params);
+        dataService.remove(params);
     };
     $scope.init();
 }]);

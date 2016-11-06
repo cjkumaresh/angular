@@ -3,17 +3,32 @@ var express = require('express'),
     _ = require('lodash'),
     app = express(),
     employees = [{
-        name: 'Employee 1',
+        firstname: 'Employee',
+        lastname: '1',
         id: '100001',
-        email: 'employee1@test.com'
+        email: 'employee1@test.com',
+        address: 'address',
+        gender: 'male',
+        username: 'employee1',
+        password: 'password'
     }, {
-        name: 'Employee 2',
+        firstname: 'Employee',
+        lastname: '2',
         id: '100002',
-        email: 'employee2@test.com'
+        email: 'employee2@test.com',
+        address: 'address',
+        gender: 'female',
+        username: 'employee2',
+        password: 'password'
     }, {
-        name: 'Employee 3',
+        firstname: 'Employee',
+        lastname: '3',
         id: '100003',
-        email: 'employee3@test.com'
+        email: 'employee3@test.com',
+        address: 'address',
+        gender: 'male',
+        username: 'employee3',
+        password: 'password'
     }];
 
 app.use(express.static(__dirname + '/public'));
@@ -47,10 +62,30 @@ app.get('/employee/:id', function (req, res) {
  * @param  {} req
  * @param  {} res
  */
+app.post('/employee', function (req, res) {
+    req.body.id = +(_.maxBy(employees, 'id').id) + 1 + '';
+    employees.unshift(req.body);
+
+    res.json(employees);
+});
+
+/**
+ * @param  {} req
+ * @param  {} res
+ */
+app.post('/employee/:id', function (req, res) {
+    employees.splice(_.indexOf(employees, _.find(employees, { id: req.params.id })), 1);
+    employees.unshift(req.body);
+
+    res.json(employees);
+});
+
+/**
+ * @param  {} req
+ * @param  {} res
+ */
 app.delete('/employee/:id', function (req, res) {
-    _.remove(employees, {
-        id: req.params.id
-    });
+    _.remove(employees, { id: req.params.id });
 
     res.json(employees);
 });

@@ -1,0 +1,62 @@
+<div class="col s12 m12">
+	<div class="card">
+		<div class="card-content">
+			<div class="card-title">
+				<span>Employee Details</span>
+			</div>
+			<form class="col s12">
+				<div class="col s12">
+					<div class="input-field">
+						<input id="firstname" type="text" class="validate" ng-model="employee.firstname">
+						<label for="firstname">First Name</label>
+					</div>
+				</div>
+				<div class="col s12">
+					<div class="input-field">
+						<input id="lastname" type="text" class="validate" ng-model="employee.lastname">
+						<label for="lastname">Last Name</label>
+					</div>
+				</div>
+				<div class="col s12">
+					<div class="input-field">
+						<input id="username" type="text" class="validate" ng-model="employee.username">
+						<label for="username">Username</label>
+					</div>
+				</div>
+				<div class="col s12">
+					<div class="input-field">
+						<input id="password" type="password" class="validate" ng-model="employee.password">
+						<label for="password">Password</label>
+					</div>
+				</div>
+				<div class="col s12">
+					<div class="input-field">
+						<input id="email" type="email" class="validate" ng-model="employee.email">
+						<label for="email">Email</label>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col s12">Gender</label>
+					<div class="col">
+						<input class="with-gap" name="gender" type="radio" id="male" value="male" ng-model="employee.gender" />
+						<label for="male">Male</label>
+					</div>
+					<div class="col">
+						<input class="with-gap" name="gender" type="radio" id="female" value="female" ng-model="employee.gender" />
+						<label for="female">Female</label>
+					</div>
+				</div>
+				<div class="col s12">
+					<div class="input-field">
+						<textarea id="address" class="materialize-textarea" ng-model="employee.address"></textarea>
+						<label for="address">Address</label>
+					</div>
+				</div>
+				<div class="col s12 right-align">
+					<button class="btn waves-effect waves-light" type="button" ng-click="cancel()">Cancel</button>
+					<button class="btn waves-effect waves-light" ng-click="save()">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
